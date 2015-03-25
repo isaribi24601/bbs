@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+   
+   <center>
+    <h1>Welcom to SCS</h1>
+    
+    <form action="/new" method="post" enctype="multipart/form-data">
+        <p>氏名<input type="text" name="user_name"></p>
+        <p>投稿内容<input type="text" name="body"></p>
+        <p><input type="file" name="file"></p>
+        <p><input type="submit" value="投稿"></p>
+        
+    </form>
+    
+    <hr>
+    <ul>
+       <% @contents.each do |content| %>
+       
+    
+           
+        <p><h2><%= content.name %></h2></p>
+            <p><%= content.body %></p>
+            <% unless content.img.empty? %>
+        <p><img src="/images/<%= content.img %>"></p>
+            <% end %>
+            
+            
+        </li>
+        <% end %>
+    </ul>
+    
+    
+    </center>
+</body>
+</html>
