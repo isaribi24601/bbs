@@ -5,6 +5,7 @@ require 'active_record'
 set :bind, '192.168.33.10'
 set :port, 3000
 
+
 require './models/contributions.rb'
 
 get '/' do
